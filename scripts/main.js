@@ -47,12 +47,14 @@ function mostrarCardSerie(serie) {
     cardContainer.innerHTML = cardHtml;
 }
 function showAverageSeason(series) {
+    var lengSerie = 0;
     var averageseason = 0;
     var tbody = document.createElement("p");
     for (var _i = 0, series_2 = series; _i < series_2.length; _i++) {
         var serie = series_2[_i];
+        lengSerie += 1;
         averageseason += serie.seasons;
     }
-    tbody.innerHTML = "<b>Average Seasons&nbsp;&nbsp;".concat(averageseason, "&nbsp;&nbsp</b> ");
+    tbody.innerHTML = "<b>Average Seasons&nbsp;&nbsp;".concat(averageseason / lengSerie, "&nbsp;&nbsp</b> ");
     averageTable.appendChild(tbody);
 }
